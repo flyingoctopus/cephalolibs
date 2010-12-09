@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>url="http://processing.org/reference/"$TM_CURRENT_WORD"_.html"
+
+echo  "&lt;meta http-equiv='Refresh' content='0;URL=$url'&gt;"</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^f</string>
+	<key>name</key>
+	<string>Find in Reference</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.java-processing</string>
+	<key>uuid</key>
+	<string>44714224-FDF6-476E-BDB3-C13D7EB94C53</string>
+</dict>
+</plist>

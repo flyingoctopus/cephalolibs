@@ -1,0 +1,180 @@
+[ui]
+username = Steve Losh <steve@stevelosh.com>
+editor = vim
+
+[extensions]
+transplant = 
+graphlog =
+record = 
+bookmarks = 
+rebase = 
+purge = 
+mq = 
+patchbomb =
+extdiff = 
+color = 
+parentrevspec =
+schemes = 
+progress =
+fetch =
+attic = ~/lib/hg/hgattic/attic.py
+paste = ~/lib/hg/hg-paste/paste.py
+prompt = ~/lib/hg/hg-prompt/prompt.py
+histedit = ~/lib/hg/histedit
+crecord = ~/lib/hg/crecord/crecord
+hggit = ~/lib/hg/hg-git/hggit
+collapse = ~/lib/hg/hgcollapse/hgext/collapse.py
+review = ~/src/hg-review/review
+
+[progress]
+delay = 1.0
+
+[schemes]
+webf = ssh://sjl@sjl.webfactional.com/repos/
+bbs = ssh://hg@bitbucket.org/
+gh = git://github.com/
+ghs = git+ssh://git@github.com/
+cb = ssh://hg@codebasehq.com/
+cbdw = ssh://hg@codebasehq.com/dwaiter/
+cbsl = ssh://hg@codebasehq.com/stevelosh/
+stable = ssh://hg@bitbucket.org/stable/
+dwd = ssh://hg@bitbucket.org/dwaiter/
+
+[diff]
+git = True
+unified = 5
+
+[extdiff]
+cmd.vd = mvim
+opts.vd = -c 'set lines=70' -c 'set columns=240' -f '+next' '+execute "DirDiff" argv(0) argv(1)'
+cmd.kd = /usr/local/bin/ksdiff-wrapper
+opts.kd = hg
+
+[email]
+method = smtp
+from = Steve Losh <steve@stevelosh.com>
+
+[smtp]
+host = smtp.gmail.com
+port = 587
+username = steve@stevelosh.com
+tls = True
+
+[color]
+status.modified = cyan
+status.added = green
+status.removed = red
+status.deleted = yellow bold underline
+status.unknown = magenta bold underline
+status.ignored = black bold
+diff.diffline = none
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = yellow bold
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = white_background
+
+[bookmarks]
+track.current = True
+
+[defaults]
+rebase = --keepbranches
+addremove = --similarity 100
+
+[alias]
+nudge = push --branch .
+st = status -C
+? = summary
+pullr = pull --remotecmd '~/bin/hg'
+pushr = push --remotecmd '~/bin/hg'
+
+cm = commit -m
+cus = commit -m 'Update subrepository state.'
+cuf = commit -m 'Update fixtures.' -I '**fixtures**.json'
+cmwn = commit -m 'Merge with Nick.'
+
+mergelocal = $HG --config ui.merge=internal:local merge $@
+mergeother = $HG --config ui.merge=internal:other merge $@
+mergefail = $HG --config ui.merge=internal:fail merge $@
+
+fdiff = diff -U 10000000000000
+qfdiff = qdiff -U 10000000000000
+
+ks = kd -c
+
+dlog = log --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.dlog
+_ = dlog -l15
+__ = _ -l100000000
+o_ = outgoing -n --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.dlog
+i_ = incoming -n --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.dlog
+
+slog = log --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.slog
+. = slog -l15
+.. = . -l100000000
+o. = outgoing -n --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.slog
+i. = incoming -n --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.slog
+
+sglog = glog --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.sglog
+, = sglog -l7
+,, = , -l100000000
+o, = outgoing --graph --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.sglog
+i, = incoming --graph --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.sglog
+
+nlog = log --style=$HOME/lib/dotfiles/mercurial/templates/map-cmdline.nlog
+n = nlog -vr
+show = nlog --color=always -vpr
+
+fet = fetch --message 'Automated merge.'
+
+# Make a new repo with some sensible defaults.
+mkrepo = !$HG init $1 && cd $1 && \
+          echo 'syntax: glob'  > .hgignore && \
+          echo ''             >> .hgignore && \
+          echo '.DS_Store'    >> .hgignore && \
+          echo '*.pyc'        >> .hgignore && \
+          echo '*.swp'        >> .hgignore && \
+          echo '*.swo'        >> .hgignore && \
+          echo '*.un~'        >> .hgignore && \
+          echo "[paths]\n" >> .hg/hgrc
+
+# Empty the current MQ patch.
+qempty = !$HG qrefresh -X `$HG root`
+
+# Commit under any applied MQ patches, and go back to where you were after doing so.
+# `hg ciunder` will use `$EDITOR` to get the commit message
+# `hg cmunder 'message'` takes it on the command line
+ciunder = !HG_CUR_PATCH=`$HG qtop --color=never` && \
+           $HG qnew temp-for-under && \
+           $HG qpop -a && \
+           $HG qpush --move temp-for-under && \
+           $HG qrefresh -e && \
+           $HG qfinish temp-for-under && \
+           $HG qpush $HG_CUR_PATCH
+cmunder = !HG_CUR_PATCH=`$HG qtop --color=never` && \
+           $HG qnew temp-for-under && \
+           $HG qpop -a && \
+           $HG qpush --move temp-for-under && \
+           $HG qrefresh -m "$@" && \
+           $HG qfinish temp-for-under && \
+           $HG qpush $HG_CUR_PATCH
+
+pushunder = !HG_CUR_PATCH=`$HG qtop --color=never` && \
+             $HG qpop -a && \
+             $HG push $@ && \
+             $HG qpush $HG_CUR_PATCH
+
+# Edit the current repo's hgrc file.
+erc = !$EDITOR `$HG root`/.hg/hgrc
+
+# Simple bug/todo tracking
+# Idea from Justin: http://gist.github.com/464871
+# Install t first: http://bitbucket.org/sjl/t/
+bug = !~/lib/t/t.py --task-dir="`$HG root`" --list=BUGS $@
+todo = !~/lib/t/t.py --task-dir="`$HG root`" --list=TODO $@
+
+# Easily add ignore patterns.
+ignore = ![ -n "$@" ] && echo '$@' >> `$HG root`/.hgignore && \
+          $HG commit `$HG root`/.hgignore -Am 'Add "$@" to .hgignore.'

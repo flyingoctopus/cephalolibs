@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block script %}
+	self.resizeTo(420,350);
+    $('.error').hide();
+    var location = "{{ homedir }}";
+    $('#location').click(function() {
+        command="";
+        cmd('location=$(CocoaDialog fileselect --float --text "Select a workplace (parent directory of this project)" --select-directories --with-directory "$HOME/Documents")');
+        cmd('echo $location');
+        var result = TextMate.system(command, null);
+        var hasdir = result.outputString.indexOf("/")!="-1";
+        if (hasdir) {
+            location = result.outputString;
+            $('#location_folder').html(location);
+        } else {
+            location = "{{ homedir }}"
+            $('#location_folder').html(location);
+        }
+    });
+    
+    $('#project_name').keyup(function(){
+        var slug = $(this).val().replace(/\s+/g,'').replace(/[^\.a-zA-Z0-9\-]/g,'');
+        if (slug!=$(this).val()) {
+            $(this).val(slug);
+        };
+    });
+    
+   
+    $('#create').click(function() {
+        $('.error').hide();
+		var	proj_name = $('#project_name').val().replace(" ","");
+        if (proj_name=="") {
+            $('.error').html('Error, please fill out all fields.').show();
+        } else {
+            command = "";
+            cmd('cd "$TM_BUNDLE_SUPPORT"');
+            cmd('cd onebit/libs/bash');
+            
+            cmd('python new.py "'+location+'" "'+proj_name+'"');
+            TextMate.isBusy = true;
+            var result = TextMate.system(command, function(){
+                window.opener='x';
+                window.close();
+           });
+            
+        }
+    });
+{% endblock %}
+
+{% block style %}
+	#new_sketch, h3{
+		color:#FFF;
+	}
+	#new_form{
+		float:left;
+		width:100%;
+		margin-top:10px;
+	}
+	#new_form p{
+		float:left;
+		clear:both;
+		margin:6px 0;
+		width:395px;
+	}
+	#new_form label{
+		float:left;
+		width:130px;
+		margin-right:10px;
+		text-align:right;
+		padding-top:3px;
+	}
+	#new_form input:focus{
+		outline-width:0;
+	}
+	#new_form input[type="text"]:focus{
+	    background-position: 0 -100px;
+	}
+	#new_form input[type="text"]{
+	    float:left;
+		width:240px;
+		border:none;
+		-webkit-border-radius: 9px;
+        border-radius: 9px;
+		padding:6px;
+		-webkit-box-shadow:1px 1px 2px #555;
+        box-shadow:1px 1px 2px #555;
+		background: #FFF url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAACgCAMAAAD+fibNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBQTFRF////zM6+0NLD1uW1z+Kr1OOy1NfJz9HB19nN1OOvzdC/0tTF0uKq1OCs2t3R7PPc1NbH6fHV0eSw2Oe31ui35efe8fTs3d7S2dvO0eGt5e7R/f773OrD1+W73+DW+vv2/f389PXy2+m/4eLY/v7+6uvk8PXl7u7p3d/U4uPa9/zy7/Li5+jg6Oni5e3M3uvH4+Xc1+i+2ea+9Pnv5fDW6+zl0eSs+/v54evE0+Kx4uvK4OzL7e3n4+/O4+vO0N+rI0WR/wAAAQNJREFUeNqk0MlyglAARNFmBgERlEGQSUQEUXGKRk38/78KeRiIlUUW3qpTvW/ghaLZDFEU4XQ6IQxDxHEMK7aQWRlu2Q3H4xFpmmK1WqEsS5imSVRVhTzPkSQJgiRAEARYLBawbZvo9/stx3EIURSf8Dz/x2AwaMgy5B80TdC/CLRQoxuC8NAjer0ORVH/eiWv/s/zPIReiKIosN/vYVkW5vM5lsslNE1r6Bp0XcfhcCDrum7tA+v1GtfPKy6XCzabDc7nMyaTCabfplPstltsdzv4vl8bYjQaEcxw2GGYZxzX4h7epY5kGA1JIow3paUoDZYdE6qqttgx22A7Y+X+JcAAZ/ceJOo8QMQAAAAASUVORK5CYII=) repeat-x 0 0;
+	}
+	select{
+	    float:left;
+		width:253px;
+    }
+	#create{
+		float:right;
+	}
+	#location_folder{
+	    height:10px;
+	    line-height:2px;
+	    text-indent:142px;
+	    white-space:nowrap;
+	}
+{% endblock %}
+
+{% block content %}
+<h3>Create a new sketch</h3>
+<span class="error"></span>
+<div id="new_sketch">
+    
+	<div id="new_form">
+	<p><label for="location">Workspace</label><input type="button" name="location" value="Browse" id="location"></p>
+	<p id="location_folder">{{ homedir }}</p>
+    <p><label for="project_name">Project Name</label><input type="text" name="project_name" value="" id="project_name"></p>
+	<p><label for="create"></label><input type="button" name="create" value="Create" id="create">
+	</p>
+	</div>
+</div>
+	<pre id="output"></pre>
+{% endblock %}
