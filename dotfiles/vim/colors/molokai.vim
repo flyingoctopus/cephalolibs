@@ -47,6 +47,7 @@ hi Error           guifg=#960050 guibg=#1E0010
 hi ErrorMsg        guifg=#F92672 guibg=#232526 gui=bold
 hi Exception       guifg=#A6E22E               gui=bold
 hi Float           guifg=#AE81FF
+hi FoldColumn      guifg=#465457 guibg=#000000
 hi Folded          guifg=#465457 guibg=#000000
 hi Function        guifg=#A6E22E
 hi Identifier      guifg=#FD971F
@@ -87,12 +88,12 @@ if has("spell")
     hi SpellRare   guisp=#FFFFFF gui=undercurl
 endif
 hi Statement       guifg=#F92672               gui=bold
-hi StatusLine      guifg=#CD5907 guibg=fg
+hi StatusLine      guifg=#0C74CD guibg=fg
 hi StatusLineNC    guifg=#808080 guibg=#080808
 hi StorageClass    guifg=#FD971F               gui=italic
 hi Structure       guifg=#66D9EF
 hi Tag             guifg=#F92672               gui=italic
-hi Title           guifg=#ef5939
+hi Title           guifg=#ef5941
 hi Todo            guifg=#FFFFFF guibg=bg      gui=bold
 
 hi Typedef         guifg=#66D9EF
@@ -105,8 +106,6 @@ hi Visual                        guibg=#403D3D
 hi WarningMsg      guifg=#FFFFFF guibg=#333333 gui=bold
 hi WildMenu        guifg=#66D9EF guibg=#000000
 
-hi MyTagListFileName guifg=#F92672 guibg=#1B1D1E gui=bold
-
 
 
 if s:molokai_original == 1
@@ -116,17 +115,15 @@ if s:molokai_original == 1
    hi CursorColumn                  guibg=#3E3D32
    hi ColorColumn                   guibg=#3E3D32
    hi LineNr          guifg=#AAAAAA guibg=#3B3A32
-   hi FoldColumn      guifg=#AAAAAA guibg=#3B3A32
    hi NonText         guifg=#BCBCBC guibg=#3B3A32
 else
    hi Normal          guifg=#F8F8F2 guibg=#1B1D1E
    hi Folded          guifg=#666666 guibg=#1B1D1E
-   hi Comment         guifg=#5c7176
+   hi Comment         guifg=#465457
    hi CursorLine                    guibg=#232728
    hi CursorColumn                  guibg=#232728
    hi ColorColumn                   guibg=#232728
    hi LineNr          guifg=#AAAAAA guibg=#1B1D1E
-   hi FoldColumn      guifg=#AAAAAA guibg=#1B1D1E
    
    " Invisible character colors
    highlight NonText    guifg=#444444 guibg=#1a1c1d

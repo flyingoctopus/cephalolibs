@@ -1,11 +1,63 @@
-#kill startup message
 startup_message off
-# define a bigger scrollback, default is 100 lines
-defscrollback 1024
-
-# An alternative hardstatus to display a bar at the bottom listing the
-# windownames and highlighting the current windowname in blue. (This is only
-# enabled if there is no hardstatus setting for your terminal)
+defscrollback 8192
 hardstatus on
 hardstatus alwayslastline
-hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+#alias ls='ls -lahFG'
+#export TERM=xterm-color
+
+#hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}% w %=%{..G} %H %{..Y} %m/%d %C%a "
+
+hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
+
+screen -t rOOt 0 su -
+screen -t ncmpc 1 bash 
+screen -t terminal 2 bash
+screen -t MComander 3 mc
+screen -t vimTerm 4 bash
+screen -t terminal 5 bash
+screen -t tail 6 bash
+
+
+################### cut from ~/.screenrc ################### 
+#F10===(alt-0) 
+bindkey º stuff \033[21~ 
+#F5===(alt-5) 
+bindkey ∞ stuff \033[15~ 
+#F7===(alt-7) 
+bindkey ¶ stuff \033[18~ 
+#PageUp===(alt-O) 
+bindkey ø stuff \033[5~ 
+#Up Arrow===(alt-K) 
+bindkey ˚ stuff \033[A 
+#Right Arrow===(alt-L) 
+bindkey ˙ stuff \033[D 
+#Down Arrow===(alt-J) 
+bindkey ∆ stuff \033[B 
+#Left Arrow===(alt-H) 
+bindkey ¬ stuff \033[C 
+#Control-D===(alt-D) 
+bindkey ∂ stuff \004 
+#Control-C===(alt-C) 
+bindkey ç stuff \003 
+#Control-W===(alt-W) 
+bindkey ∑ stuff \027 
+#Control-R===(alt-R) 
+bindkey ® stuff \022 
+#PF1===(alt-1) 
+bindkey ¡ stuff \033OP 
+#PF2===(alt-2) 
+bindkey ™ stuff \033OQ 
+#PF3===(alt-3) 
+bindkey £ stuff \033OR 
+#PF4===(alt-4) 
+bindkey ¢ stuff \033OS 
+#F6===(alt-6) 
+bindkey § stuff \033[17~ 
+#F8===(alt-8) 
+bindkey • stuff \033[19~ 
+#F9===(alt-9) 
+bindkey ª stuff \033[20~ 
+#PD===(alt-M) 
+bindkey µ stuff \033[6~ 
+#################### end of cut from ~/.screenrc ################ 
