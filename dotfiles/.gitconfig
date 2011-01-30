@@ -1,6 +1,6 @@
 [user]
-name = Steve Losh
-email = steve@stevelosh.com
+name = Vincent van Haaff
+email = vincent@vanhaaff.com
 
 [core]
 pager = cat
@@ -27,11 +27,11 @@ diff = auto
 interactive = auto
 status = auto
 
-[difftool "Kaleidoscope"]
-cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool "Changes"]
+cmd = chdiff git \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
 prompt = false
 
 [diff]
-tool = Kaleidoscope
+tool = Changes

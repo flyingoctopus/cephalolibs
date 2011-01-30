@@ -27,9 +27,16 @@ set cursorline
 set ttyfast
 set ruler
 set backspace=indent,eol,start
-set relativenumber
 set laststatus=2
-set undofile
+set formatoptions=l
+set lbr
+
+
+" Enable code completion
+filetype plugin on
+set ofu=syntaxcomplete#Complete
+au Bufread,BufNewFile *.as set filetype=actionscript
+
 
 " Backups
 set backupdir=~/.vim/tmp/backup// " backups
@@ -57,7 +64,6 @@ vmap <tab> %
 set wrap
 set textwidth=79
 set formatoptions=qrn1
-set colorcolumn=85
 
 " Use the same symbols as TextMate for tabstops and EOLs
 set list
@@ -69,7 +75,7 @@ set background=dark
 colorscheme delek
 
 " NERD Tree
-map <F2> :NERDTreeToggle<cr>
+map <F2> :NERDTreeToggle %:p:h<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 
 " Use the damn hjkl keys
@@ -113,7 +119,6 @@ endfunction
 set foldtext=MyFoldText()
 
 " Fuck you, help key.
-set fuoptions=maxvert,maxhorz
 inoremap <F1> <ESC>:set invfullscreen<CR>a
 nnoremap <F1> :set invfullscreen<CR>
 vnoremap <F1> :set invfullscreen<CR>
@@ -263,13 +268,6 @@ let Tlist_Show_One_File = 1
 map <F4> :TlistToggle<cr>
 map <leader>T :!/usr/local/bin/ctags --exclude='**/ckeditor' -R . $(test -f .venv && echo ~/lib/virtualenvs/`cat .venv`)<CR>
 
-" Rope
-source $HOME/.vim/sadness/ropevim/rope.vim
-let ropevim_enable_shortcuts = 0
-let ropevim_guess_project = 1
-noremap <leader>rr :RopeRename<CR>
-vnoremap <leader>rm :RopeExtractMethod<CR>
-noremap <leader>roi :RopeOrganizeImports<CR>
 
 if has('gui_running')
     set guifont=Menlo:h12
@@ -283,8 +281,26 @@ if has('gui_running')
     set go-=R
 
     if has("gui_macvim")
+
+        set colorcolumn=85
         macmenu &File.New\ Tab key=<nop>
         map <leader>t <Plug>PeepOpen
+
+        set transparency=5
+        " set relativenumber
+        set number
+        set undofile
+        set colorcolumn=85
+        set fuoptions=maxvert,maxhorz
+
+        " Rope
+        source $HOME/.vim/sadness/ropevim/rope.vim
+        let ropevim_enable_shortcuts = 0
+        let ropevim_guess_project = 1
+        noremap <leader>rr :RopeRename<CR>
+        vnoremap <leader>rm :RopeExtractMethod<CR>
+        noremap <leader>roi :RopeOrganizeImports<CR>
+
     end
 
     let g:sparkupExecuteMapping = '<D-e>'
