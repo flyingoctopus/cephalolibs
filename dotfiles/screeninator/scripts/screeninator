@@ -1,1 +1,1 @@
-alias start_stevelosh='screen -c /Users/sjl/.screeninator/stevelosh.screen -S stevelosh.com'
+alias start_vincent='screen -c /Users/vincent/.screeninator/vincent.screen -S vincent.vanhaaff.com'
