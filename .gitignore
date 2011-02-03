@@ -1,0 +1,8 @@
+.DS_Store
+..gitignore.un~
+dotfiles/..gitconfig.un~
+dotfiles/..hgrc.un~
+dotfiles/config/pianobar/.config.un~
+dotfiles/screeninator/scripts/.screeninator.un~
+dotfiles/vim/backup/bundle/peepopen/plugin/..vimrc.un~
+dotfiles/vim/backup/colors/.molokai.vim.un~

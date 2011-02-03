@@ -1,0 +1,13 @@
+# ~/.screeninator/vincent.yml
+# you can make as many tabs as you wish...
+
+escape: ``
+project_name: vincent.vanhaaff.com
+project_root: $HOME/sandbox/vincent.vanhaaff.com
+tabs:
+  - shell:
+    - wo
+    - hg pull
+  - server:
+    - wo
+    - hyde -w -s . -k

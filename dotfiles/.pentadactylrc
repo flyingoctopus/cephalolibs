@@ -1,0 +1,53 @@
+set runtimepath=/Users/vincent/.pentatactyl
+source! /Users/vincent/.pentadactyl.local
+
+set go=
+"set guioptions=rbnB
+set guioptions=Bnbs
+"set titlestring=dance
+"set showtabline=1
+"set showstatuslinks=2
+"set ic
+set popups=tab
+"set wildoptions=auto
+set complete=slb
+"set suggestengines=google
+"set focuscontent
+
+set visualbell
+hi Bell opacity: .5;
+
+map ,s :mapc<CR>:cmapc<CR>:imapc<CR>:so<Space>~/.vimperatorrc<CR>
+map <C-r> :restart<CR>
+
+noremap j 4j
+noremap k 4k
+"noremap jj <ESC>
+
+"map ,t <silent> :tabopen<Space>http://pcod.no-ip.org/yats/search?query=
+"map ,t <silent> :tabopen<Space>http://buzztter.com/ja/k/
+
+" google suggest engine
+" set suggestengines=g
+
+set editor=/usr/local/bin/mvim
+
+"highlight Hint  opacity:0.90
+"highlight Hint  opacity:0.90
+
+highlight Hint font-family: monospace; font-size: 10px; font-weight: bold; color: black; background-color: yellow; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px;
+
+highlight HintElem background-color: #DDDDDD;  color: black;
+
+"" plugin
+
+map T :twitter<Space>
+map ,l :copy<Space>titleAndURL<CR>:twitter<Space>みてる:<M-v><CR>
+map Y :twitter<Space>@emilysmith2000<Space>
+
+
+" menu toolbar
+map <C-F1> :set guioptions!=m<CR>
+" bookmarks toolbar
+map <C-F2> :set guioptions!=B<CR>
+
