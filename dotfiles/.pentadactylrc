@@ -3,7 +3,7 @@ source! /Users/vincent/.pentadactyl.local
 
 set go=
 "set guioptions=rbnB
-set guioptions=Bnbs
+set guioptions=ns
 "set titlestring=dance
 "set showtabline=1
 "set showstatuslinks=2

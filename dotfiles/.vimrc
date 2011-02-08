@@ -28,8 +28,11 @@ set ttyfast
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
+
 set formatoptions=l
 set lbr
+
+set relativenumber
 
 
 " Enable code completion
@@ -72,7 +75,7 @@ set listchars=tab:▸\ ,eol:¬
 " Color scheme (terminal)
 syntax on
 set background=dark
-colorscheme delek
+colorscheme sorcerer
 
 " NERD Tree
 map <F2> :NERDTreeToggle %:p:h<cr>
@@ -287,8 +290,7 @@ if has('gui_running')
         map <leader>t <Plug>PeepOpen
 
         set transparency=5
-        " set relativenumber
-        set number
+        set relativenumber
         set undofile
         set colorcolumn=85
         set fuoptions=maxvert,maxhorz
