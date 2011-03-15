@@ -17,3 +17,5 @@ screen -t bash 8
 #screen -t MCommadner 0 mc
 screen -t bash 9
 screen -t vimTerm 0 vim
+
+defscrollback 8192
