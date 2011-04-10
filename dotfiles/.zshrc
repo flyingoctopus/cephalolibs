@@ -8,7 +8,7 @@ unsetopt promptcr
 
 # Useful aliases -------------------------------------------------------------
 alias j='z'
-alias fab='fab -i ~/.ssh/stevelosh'
+alias fab='fab -i ~/.ssh/vincentvanhaaff'
 alias oldgcc='export CC=/usr/bin/gcc-4.0'
 
 # Environment variables ------------------------------------------------------
