@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Volumes/data/sandbox/as/ParticleSequencer'
-let g:netrw_dirhist_2='/opt/local/var/db/mysql5'
-let g:netrw_dirhist_3='/Volumes/data/sandbox/data_vis/elections.ca/election_finance/src'
-let g:netrw_dirhist_4='/Volumes/data/sandbox/data_vis/elections.ca/election_finance'
-let g:netrw_dirhist_5='/Users/vincent/.pentadactyl'
-let g:netrw_dirhist_6='/Volumes/blitzoo (openVPN)/sandbox/dev_svn/planetoids'
-let g:netrw_dirhist_7='/Volumes/vincent_imac/sandbox/dev_svn/planetoids'
