@@ -43,9 +43,13 @@ ln -s "$HOME/lib/dotfiles/zsh" "$HOME/lib/oh-my-zsh/custom"
 ln -s "$HOME/lib/dotfiles/.ackrc" "$HOME/.ackrc"
 ln -s "$HOME/lib/dotfiles/.gitconfig" "$HOME/.gitconfig"
 ln -s "$HOME/lib/dotfiles/.hgrc" "$HOME/.hgrc"
-ln -s "$HOME/lib/dotfiles/vim/.vim" "$HOME/.vim"
-ln -s "$HOME/lib/dotfiles/vim/.vimrc" "$HOME/.vimrc"
+ln -s "$HOME/lib/dotfiles/.vim" "$HOME/.vim"
+ln -s "$HOME/lib/dotfiles/.vimrc" "$HOME/.vimrc"
+ln -s "$HOME/lib/dotfiles/.gvimrc" "$HOME/.gvimrc"
+ln -s "$home/lib/dotfiles/.vimrc.local" "$home/.vimrc.local"
 ln -s "$HOME/lib/dotfiles/.screenrc" "$HOME/.screenrc"
+ln -s "$HOME/lib/dotfiles/.inputrc" "$HOME/.inputrc"
+ln -s "$HOME/lib/dotfiles/.editrc" "$HOME/.editrc"
 
 rm ~/.zshrc
 rm ~/.bashrc

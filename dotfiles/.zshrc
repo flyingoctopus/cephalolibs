@@ -16,6 +16,8 @@ export EDITOR='vim'
 export PATH="$HOME/.gem/ruby/1.8/bin:${PATH}"
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/lib/fmscripts:$HOME/bin:$PATH"
 export PATH="/opt/subversion/bin:${PATH}"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
 export PATH="${PATH}:/usr/local/Cellar/PyPi/3.6/bin"
 export PATH="${PATH}:/usr/local/Cellar/python/2.6.4/bin"
 export PATH="${PATH}:/usr/local/Cellar/python/2.6.5/bin"
@@ -55,3 +57,14 @@ test -n "$(which bcvi)" && eval "$(bcvi --unpack-term)"
 test -n "${BCVI_CONF}"  && alias vi="bcvi"
 test -n "${BCVI_CONF}"  && alias suvi="EDITOR='bcvi -c viwait' sudoedit"
 test -n "${BCVI_CONF}"  && alias bcp="bcvi -c scpd"
+
+# rvm -----------------------------------------------------------------------
+type rvm | head -1
+source ~/.rvm/scripts/rvm
+
+
+# vim -----------------------------------------------------------------------
+source ~/.inputrc
+source ~/.editrc
+
+set -o vi

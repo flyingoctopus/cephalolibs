@@ -296,12 +296,12 @@ if has('gui_running')
         set fuoptions=maxvert,maxhorz
 
         " Rope
-        source $HOME/.vim/sadness/ropevim/rope.vim
-        let ropevim_enable_shortcuts = 0
-        let ropevim_guess_project = 1
-        noremap <leader>rr :RopeRename<CR>
-        vnoremap <leader>rm :RopeExtractMethod<CR>
-        noremap <leader>roi :RopeOrganizeImports<CR>
+        "source $HOME/.vim/sadness/ropevim/rope.vim
+        "let ropevim_enable_shortcuts = 0
+        "let ropevim_guess_project = 1
+        "noremap <leader>rr :RopeRename<CR>
+        "vnoremap <leader>rm :RopeExtractMethod<CR>
+        "noremap <leader>roi :RopeOrganizeImports<CR>
 
     end
 
