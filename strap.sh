@@ -1,3 +1,4 @@
+#dependency installation
 apt-get update
 apt-get upgrade
 
@@ -24,8 +25,10 @@ chmod +x *
 
 rails new my_app --skip-active-record
 
+
+#editor config
 hg clone https://vim.googlecode.com/hg/ vim
 cd vim
-./configure --enable-rubyinterp --with-features=HUGE --enable-gui=no --disable-gpm --enable-multibyte
+./configure --enable-rubyinterp --enable-pythoninterp --with-features=HUGE --enable-gui=no --disable-gpm --enable-multibyte
 make
 sudo make install
