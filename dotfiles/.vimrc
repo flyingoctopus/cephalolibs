@@ -1,6 +1,6 @@
 set nocompatible
 
-set relativenumber
+set number
 set ruler
 syntax on
 
