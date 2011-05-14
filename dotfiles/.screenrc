@@ -3,19 +3,18 @@ vbell off
 hardstatus on
 hardstatus alwayslastline
 
-#alias ls='ls -lahFG'
-#export TERM=xterm-color
-
+term xterm
 #hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}% w %=%{..G} %H %{..Y} %m/%d %C%a "
 
 hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
 
-#shell -/bin/bash
+shell -/bin/zsh
 #screen -t ~ 0 su -
-screen -t bash 7
-screen -t bash 8
+screen -t zsh 7
+screen -t zsh 8
 #screen -t MCommadner 0 mc
-screen -t bash 9
-screen -t vimTerm 0 vim
+screen -t zsh 9
+#screen -t vimTerm 0 vim
 
-defscrollback 8192
+#defscrollback 8192
+defscrollback 100000
