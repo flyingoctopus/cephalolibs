@@ -8,7 +8,7 @@ unsetopt promptcr
 
 # Useful aliases -------------------------------------------------------------
 alias j='z'
-alias fab='fab -i ~/.ssh/stevelosh'
+alias fab='fab -i ~/.ssh/vincentvanhaaff'
 alias oldgcc='export CC=/usr/bin/gcc-4.0'
 
 # Environment variables ------------------------------------------------------
@@ -16,6 +16,8 @@ export EDITOR='vim'
 export PATH="$HOME/.gem/ruby/1.8/bin:${PATH}"
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/lib/fmscripts:$HOME/bin:$PATH"
 export PATH="/opt/subversion/bin:${PATH}"
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+
 export PATH="${PATH}:/usr/local/Cellar/PyPi/3.6/bin"
 export PATH="${PATH}:/usr/local/Cellar/python/2.6.4/bin"
 export PATH="${PATH}:/usr/local/Cellar/python/2.6.5/bin"
@@ -37,6 +39,9 @@ export PYTHONPATH="$HOME/lib/hg/hg-stable:$PYTHONPATH"
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 
+# Shell environment export for vim 
+export SHELL=/bin/zsh
+
 # Extra shell extensions like z and tab completion for Mercurial -------------
 source ~/lib/z/z.sh
 export VEW_PATH="$HOME/lib/python/virtualenvwrapper/virtualenvwrapper.sh"
@@ -55,3 +60,14 @@ test -n "$(which bcvi)" && eval "$(bcvi --unpack-term)"
 test -n "${BCVI_CONF}"  && alias vi="bcvi"
 test -n "${BCVI_CONF}"  && alias suvi="EDITOR='bcvi -c viwait' sudoedit"
 test -n "${BCVI_CONF}"  && alias bcp="bcvi -c scpd"
+
+# rvm -----------------------------------------------------------------------
+type rvm | head -1
+source ~/.rvm/scripts/rvm
+
+
+# vim -----------------------------------------------------------------------
+source ~/.inputrc
+source ~/.editrc
+
+set -o vi
