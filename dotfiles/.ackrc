@@ -7,3 +7,8 @@ django=.py,.html
 less=.less
 --type-set
 front=.html,.js,.less,.css
+
+--type-add=ruby=.haml,.rake,.rsel,.feature,.php,.sass
+--ignore-dir=db
+--ignore-dir=tmp
+--ignore-dir=log

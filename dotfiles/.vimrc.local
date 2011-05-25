@@ -4,6 +4,8 @@ filetype plugin indent on
 
 set nocompatible
 
+set relativenumber
+
 " Security
 set modelines=0
 
@@ -75,6 +77,7 @@ set background=dark
 colorscheme sorcerer
 
 " NERD Tree
+map <F1> :NERDTreeToggle %:p:h<cr>
 map <F2> :NERDTreeToggle %:p:h<cr>
 let NERDTreeIgnore=['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$']
 
@@ -118,10 +121,6 @@ function! MyFoldText()
 endfunction
 set foldtext=MyFoldText()
 
-" Fuck you, help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
 
 " Various syntax stuff
 au BufNewFile,BufRead *.less set filetype=less
@@ -281,5 +280,17 @@ function StartTermVSplit()
   setlocal listchars=tab:\ \ 
 endfunction
 
+" Command-/ to toggle comments
+map <leader>/ <plug>NERDCommenterToggle<CR>
+
+" Command-][ to increase/decrease indentation
+vmap <leader>[ >gv
+vmap <leader>] <gv
+
 if has('gui_running')
 endif
+
+autocmd BufEnter * lcd %:p:h
+
+" set Processing Doc path
+let processing_doc_path="/Applications/Processing.app/Contents/Resources/Java/reference/"

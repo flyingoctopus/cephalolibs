@@ -62,8 +62,8 @@ test -n "${BCVI_CONF}"  && alias suvi="EDITOR='bcvi -c viwait' sudoedit"
 test -n "${BCVI_CONF}"  && alias bcp="bcvi -c scpd"
 
 # rvm -----------------------------------------------------------------------
-type rvm | head -1
 source ~/.rvm/scripts/rvm
+type rvm | head -1
 
 
 # vim -----------------------------------------------------------------------
@@ -71,3 +71,7 @@ source ~/.inputrc
 source ~/.editrc
 
 set -o vi
+
+# motd -----------------------------------------------------------------------
+echo "\n\n"
+cat /etc/motd
