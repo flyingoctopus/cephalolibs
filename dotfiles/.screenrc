@@ -9,6 +9,7 @@ term xterm-256color
 hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
 
 shell -/bin/zsh
+<<<<<<< HEAD
 
 #screen -t ~ 0 su -
 

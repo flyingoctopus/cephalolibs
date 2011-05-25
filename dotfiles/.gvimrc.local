@@ -1,0 +1,46 @@
+set guifont=Menlo:h12
+colorscheme molokai
+color molokai
+set background=dark
+
+set go-=T
+set go-=l
+set go-=L
+set go-=r
+set go-=R
+
+" Fuck you, help key.
+inoremap <F1> <ESC>:set invfullscreen<CR>a
+nnoremap <F1> :set invfullscreen<CR>
+vnoremap <F1> :set invfullscreen<CR>
+
+map <leader>t :CommandT<CR>
+imap <leader>t <Esc>:CommandT<CR>
+
+if has("gui_macvim")
+    set colorcolumn=85
+    macmenu &File.New\ Tab key=<nop>
+    map <D-t> <Plug>PeepOpen
+
+    set transparency=5
+
+    " set relativenumber
+    set undofile
+    set colorcolumn=85
+    set fuoptions=maxvert,maxhorz
+
+    " Rope
+    "source $HOME/.vim/sadness/ropevim/rope.vim
+    "let ropevim_enable_shortcuts = 0
+    "let ropevim_guess_project = 1
+    "noremap <leader>rr :RopeRename<CR>
+    "vnoremap <leader>rm :RopeExtractMethod<CR>
+    "noremap <leader>roi :RopeOrganizeImports<CR>
+end
+
+let g:sparkupExecuteMapping = '<D-e>'
+
+" ChucK syntax highlighting for macvim (it's already in the macports vim)
+au BufNewFile,BufRead *.ck          setf ck
+
+highlight SpellBad term=underline gui=undercurl guisp=Orange
