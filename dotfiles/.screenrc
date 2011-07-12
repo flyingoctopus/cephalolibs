@@ -2,14 +2,19 @@ startup_message off
 vbell off
 hardstatus on
 hardstatus alwayslastline
+altscreen on # restore window contents after "vim", etc.
+ignorecase on # for searches
+# defwrap off # screen's word wrap is not what you want
+defmonitor on
+
 
 term xterm-256color
 #hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}% w %=%{..G} %H %{..Y} %m/%d %C%a "
 
-hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{y} %l %{c}%m/%d/%y %{W}%c %{g}]'
+#hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
 
 shell -/bin/zsh
-<<<<<<< HEAD
 
 #screen -t ~ 0 su -
 
@@ -23,3 +28,9 @@ screen -t zsh 9
 
 #defscrollback 8192
 defscrollback 100000
+utf8 on
+nonblock on
+defnonblock on
+
+multiuser on
+acladd pair

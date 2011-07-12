@@ -75,3 +75,9 @@ set -o vi
 # motd -----------------------------------------------------------------------
 echo "\n\n"
 cat /etc/motd
+
+# hibernate -----------------------------------------------------------------------
+
+alias hibernateon="sudo pmset -a hibernatemode 5"
+alias hibernateoff="sudo pmset -a hibernatemode 0"
+# 
