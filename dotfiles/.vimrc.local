@@ -2,7 +2,7 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
-set nocompatible
+"set nocompatible
 
 set relativenumber
 
@@ -62,14 +62,10 @@ runtime macros/matchit.vim
 nmap <tab> %
 vmap <tab> %
 
-" Soft/hard wrapping
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-
-" Use the same symbols as TextMate for tabstops and EOLs
-set list
-set listchars=tab:▸\ ,eol:¬
+"" Soft/hard wrapping
+"set wrap
+"set textwidth=79
+"set formatoptions=qrn1
 
 " Color scheme (terminal)
 syntax on
@@ -104,22 +100,22 @@ nnoremap <Space> za
 vnoremap <Space> za
 au BufNewFile,BufRead *.html map <leader>ft Vatzf
 
-function! MyFoldText()
-    let line = getline(v:foldstart)
+"function! MyFoldText()
+    "let line = getline(v:foldstart)
 
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 3
-    let foldedlinecount = v:foldend - v:foldstart
+    "let nucolwidth = &fdc + &number * &numberwidth
+    "let windowwidth = winwidth(0) - nucolwidth - 3
+    "let foldedlinecount = v:foldend - v:foldstart
 
-    " expand tabs into spaces
-    let onetab = strpart('          ', 0, &tabstop)
-    let line = substitute(line, '\t', onetab, 'g')
+    "" expand tabs into spaces
+    "let onetab = strpart('          ', 0, &tabstop)
+    "let line = substitute(line, '\t', onetab, 'g')
 
-    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
-    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
-    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-endfunction
-set foldtext=MyFoldText()
+    "let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    "let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+    "return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+"endfunction
+"set foldtext=MyFoldText()
 
 
 " Various syntax stuff
@@ -141,11 +137,11 @@ map <leader>S ?{<CR>jV/^\s*\}?$<CR>k:sort<CR>:noh<CR>
 " Clean whitespace
 map <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Exuberant ctags!
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-let Tlist_WinWidth = 50
-"map <F4> :TlistToggle<cr>
-"map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
+"" Exuberant ctags!
+"let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+"let Tlist_WinWidth = 50
+""map <F4> :TlistToggle<cr>
+""map <F5> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude='@.ctagsignore' .<cr>
 
 " Ack
 map <leader>a :Ack 
@@ -157,9 +153,9 @@ nnoremap <silent> <leader>y :YRShow<cr>
 " Formatting, TextMate-style
 map <leader>q gqip
 
-nmap <leader>m :make<cr>
+"nmap <leader>m :make<cr>
 
-nnoremap <F8> :SClangStart
+"nnoremap <F8> :SClangStart
 " Google's JSLint
 au BufNewFile,BufRead *.js set makeprg=gjslint\ %
 au BufNewFile,BufRead *.js set errorformat=%-P-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ E:%n:\ %m,%-Q,%-GFound\ %s,%-GSome\ %s,%-Gfixjsstyle%s,%-Gscript\ can\ %s,%-G
@@ -186,13 +182,13 @@ function! QFixToggle(forced)
 endfunction
 
 
-" TODO: Put this in filetype-specific files
+"" TODO: Put this in filetype-specific files
 au BufNewFile,BufRead *.less set foldmethod=marker
 au BufNewFile,BufRead *.less set foldmarker={,}
 au BufNewFile,BufRead *.less set nocursorline
-au BufRead,BufNewFile /etc/nginx/conf/* set ft=nginx
-au BufRead,BufNewFile /etc/nginx/sites-available/* set ft=nginx
-au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
+"au BufRead,BufNewFile /etc/nginx/conf/* set ft=nginx
+"au BufRead,BufNewFile /etc/nginx/sites-available/* set ft=nginx
+"au BufRead,BufNewFile /usr/local/etc/nginx/sites-available/* set ft=nginx
 
 " Easier linewise reselection
 map <leader>v V`]
@@ -217,7 +213,7 @@ nmap <leader>d :!hg diff %<cr>
 nmap <leader>R :RainbowParenthesesToggle<CR>
 
 " Edit .vimrc
-"nmap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+nmap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 nmap <leader>ev <C-w><C-v><C-l>:e ~/.vimrc.local<cr>
 
 " Sudo to write
@@ -228,18 +224,18 @@ nnoremap _dt :set ft=htmldjango<CR>
 nnoremap _jt :set ft=htmljinja<CR>
 nnoremap _cw :set ft=confluencewiki<CR>
 nnoremap _sc:set ft=supercollider<CR>
-"
-" HALP
-nnoremap _wtfcw :!open 'http://confluence.atlassian.com/renderer/notationhelp.action?section=all'<cr>
+""
+"" HALP
+"nnoremap _wtfcw :!open 'http://confluence.atlassian.com/renderer/notationhelp.action?section=all'<cr>
 
-" VCS Stuff
-let VCSCommandMapPrefix = "<leader>h"
+"" VCS Stuff
+"let VCSCommandMapPrefix = "<leader>h"
 
-" Disable useless HTML5 junk
-let g:event_handler_attributes_complete = 0
-let g:rdfa_attributes_complete = 0
-let g:microdata_attributes_complete = 0
-let g:atia_attributes_complete = 0
+"" Disable useless HTML5 junk
+"let g:event_handler_attributes_complete = 0
+"let g:rdfa_attributes_complete = 0
+"let g:microdata_attributes_complete = 0
+"let g:atia_attributes_complete = 0
 
 " Shouldn't need shift
 nnoremap ; :
@@ -250,26 +246,26 @@ au FocusLost * :wa
 " Stop it, hash key
 inoremap # X<BS>#
 
-" Cram tests
-au BufNewFile,BufRead *.t set filetype=cram
-let cram_fold=1
-autocmd Syntax cram setlocal foldlevel=1
+"" Cram tests
+"au BufNewFile,BufRead *.t set filetype=cram
+"let cram_fold=1
+"autocmd Syntax cram setlocal foldlevel=1
 
-" Show syntax highlighting groups for word under cursor
-nmap <C-S> :call SynStack()<CR>
-function! SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
+"" Show syntax highlighting groups for word under cursor
+"nmap <C-S> :call SynStack()<CR>
+"function! SynStack()
+  "if !exists("*synstack")
+    "return
+  "endif
+  "echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+"endfunc
 
-" Tags!
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-let Tlist_WinWidth = 50
-let Tlist_Show_One_File = 1
-map <F4> :TlistToggle<cr>
-map <leader>T :!/usr/local/bin/ctags --exclude='**/ckeditor' -R . $(test -f .venv && echo ~/lib/virtualenvs/`cat .venv`)<CR>
+"" Tags!
+"let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+"let Tlist_WinWidth = 50
+"let Tlist_Show_One_File = 1
+"map <F4> :TlistToggle<cr>
+"map <leader>T :!/usr/local/bin/ctags --exclude='**/ckeditor' -R . $(test -f .venv && echo ~/lib/virtualenvs/`cat .venv`)<CR>
 
 " ConqueTerm
 map <leader>e :call StartTermVSplit()<CR>
@@ -295,3 +291,7 @@ autocmd BufEnter * lcd %:p:h
 
 " set Processing Doc path
 let processing_doc_path="/Applications/Processing.app/Contents/Resources/Java/reference/"
+
+if $TERM == 'screen'
+    set term=xterm-256color
+endif

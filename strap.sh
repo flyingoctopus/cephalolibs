@@ -29,6 +29,6 @@ rails new my_app --skip-active-record
 #editor config
 hg clone https://vim.googlecode.com/hg/ vim
 cd vim
-./configure --enable-rubyinterp --enable-pythoninterp --with-features=HUGE --enable-gui=no --disable-gpm --enable-multibyte
+./configure --enable-rubyinterp --enable-pythoninterp --with-features=HUGE --enable-gui=no --disable-gpm --enable-multibyte --prefix=$HOME
 make
 sudo make install
