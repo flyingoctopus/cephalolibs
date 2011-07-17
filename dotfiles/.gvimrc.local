@@ -19,7 +19,7 @@ imap <leader>t <Esc>:CommandT<CR>
 
 if has("gui_macvim")
     set colorcolumn=85
-    macmenu &File.New\ Tab key=<nop>
+    "macmenu &File.New\ Tab key=<nop>
     map <D-t> <Plug>PeepOpen
 
     set transparency=5
@@ -42,5 +42,6 @@ let g:sparkupExecuteMapping = '<D-e>'
 
 " ChucK syntax highlighting for macvim (it's already in the macports vim)
 au BufNewFile,BufRead *.ck          setf ck
+au BufNewFile,BufRead *.rtf         setf scd
 
 highlight SpellBad term=underline gui=undercurl guisp=Orange
