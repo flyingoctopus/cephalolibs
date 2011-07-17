@@ -6,7 +6,7 @@
 # Don't forget the SSH keys.
 # Setuptools needs to be installed.
 
-mkdir -p lib/hg
+#mkdir -p lib/hg
 mkdir -p lib/python
 mkdir -p lib/virtualenvs
 mkdir bin
@@ -40,21 +40,21 @@ cd
 
 ln -s "$HOME/lib/dotfiles/zsh" "$HOME/lib/oh-my-zsh/custom"
 
-ln -s "$HOME/lib/dotfiles/.ackrc" "$HOME/.ackrc"
-ln -s "$HOME/lib/dotfiles/.gitconfig" "$HOME/.gitconfig"
-ln -s "$HOME/lib/dotfiles/.hgrc" "$HOME/.hgrc"
-ln -s "$HOME/lib/dotfiles/.vim" "$HOME/.vim"
-ln -s "$HOME/lib/dotfiles/.vimrc" "$HOME/.vimrc"
-ln -s "$HOME/lib/dotfiles/.gvimrc" "$HOME/.gvimrc"
-ln -s "$home/lib/dotfiles/.vimrc.local" "$home/.vimrc.local"
-ln -s "$HOME/lib/dotfiles/.screenrc" "$HOME/.screenrc"
-ln -s "$HOME/lib/dotfiles/.inputrc" "$HOME/.inputrc"
-ln -s "$HOME/lib/dotfiles/.editrc" "$HOME/.editrc"
+#ln -s "$HOME/lib/dotfiles/.ackrc" "$HOME/.ackrc"
+#ln -s "$HOME/lib/dotfiles/.gitconfig" "$HOME/.gitconfig"
+#ln -s "$HOME/lib/dotfiles/.hgrc" "$HOME/.hgrc"
+#ln -s "$HOME/lib/dotfiles/.vim" "$HOME/.vim"
+#ln -s "$HOME/lib/dotfiles/.vimrc" "$HOME/.vimrc"
+#ln -s "$HOME/lib/dotfiles/.gvimrc" "$HOME/.gvimrc"
+#ln -s "$home/lib/dotfiles/.vimrc.local" "$home/.vimrc.local"
+#ln -s "$HOME/lib/dotfiles/.screenrc" "$HOME/.screenrc"
+#ln -s "$HOME/lib/dotfiles/.inputrc" "$HOME/.inputrc"
+#ln -s "$HOME/lib/dotfiles/.editrc" "$HOME/.editrc"
 
-rm ~/.zshrc
-rm ~/.bashrc
-rm ~/.bash_profile
-ln -s "$HOME/lib/dotfiles/.zshrc" "$HOME/.zshrc"
+#rm ~/.zshrc
+#rm ~/.bashrc
+#rm ~/.bash_profile
+#ln -s "$HOME/lib/dotfiles/.zshrc" "$HOME/.zshrc"
 
 hg clone bb://sjl/hg-prompt/ "$HOME/lib/hg/hg-prompt"
 hg clone bb://sjl/hg-paste/ "$HOME/lib/hg/hg-paste"

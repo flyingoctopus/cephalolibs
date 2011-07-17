@@ -37,3 +37,4 @@ export  GIT_EXTERNAL_DIFF=/Users/vincent/lib/git/useChanges
 if [[ -s $HOME/.screeninator/scripts/screeninator ]] ; then source $HOME/.screeninator/scripts/screeninator ; fi
 
 export SHELL=/bin/zsh
+export PATH=$HOME/local/node/bin:$PATH

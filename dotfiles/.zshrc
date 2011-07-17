@@ -1,13 +1,12 @@
 export ZSH=$HOME/lib/oh-my-zsh
 export ZSH_THEME="prose"
-export DISABLE_AUTO_UPDATE="true"
+export DISABLE_AUTO_UPDATE="false"
 source $ZSH/oh-my-zsh.sh
 
 # Custom options -------------------------------------------------------------
 unsetopt promptcr
 
 # Useful aliases -------------------------------------------------------------
-alias j='z'
 alias fab='fab -i ~/.ssh/vincentvanhaaff'
 alias oldgcc='export CC=/usr/bin/gcc-4.0'
 
@@ -28,14 +27,8 @@ export HISTFILESIZE=1000
 export HISTCONTROL=erasedups
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export COMMAND_MODE=unix2003
-export R_LIBS="$HOME/lib/r"
-export BAT_CHARGE="$HOME/bin/batcharge.py"
 export RUBYOPT=rubygems
-export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
 
-# Mercurial variables --------------------------------------------------------
-export PATH="$HOME/lib/hg/hg-stable:$PATH"
-export PYTHONPATH="$HOME/lib/hg/hg-stable:$PYTHONPATH"
 export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
 export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 
@@ -43,17 +36,7 @@ export PYTHONPATH="$PYTHONPATH:/usr/local/lib/python2.7/site-packages"
 export SHELL=/bin/zsh
 
 # Extra shell extensions like z and tab completion for Mercurial -------------
-source ~/lib/z/z.sh
-export VEW_PATH="$HOME/lib/python/virtualenvwrapper/virtualenvwrapper.sh"
-if [[ -s $HOME/.screeninator/scripts/screeninator ]] ; then source $HOME/.screeninator/scripts/screeninator ; fi
-
-# See ------------------------------------------------------------------------
-export PYTHONPATH="$HOME/lib/python/see:$PYTHONPATH"
-
-# Pre-Prompt Command ---------------------------------------------------------
-function precmd () {
-    z --add "$(pwd -P)"
-}
+ if [[ -s $HOME/.screeninator/scripts/screeninator ]] ; then source $HOME/.screeninator/scripts/screeninator ; fi
 
 # BCVI -----------------------------------------------------------------------
 test -n "$(which bcvi)" && eval "$(bcvi --unpack-term)"
@@ -76,8 +59,3 @@ set -o vi
 echo "\n\n"
 cat /etc/motd
 
-# hibernate -----------------------------------------------------------------------
-
-alias hibernateon="sudo pmset -a hibernatemode 5"
-alias hibernateoff="sudo pmset -a hibernatemode 0"
-# 
