@@ -70,7 +70,8 @@ vmap <tab> %
 " Color scheme (terminal)
 syntax on
 set background=dark
-colorscheme sorcerer
+"colorscheme sorcerer
+colorscheme molokai
 
 " NERD Tree
 map <F1> :NERDTreeToggle %:p:h<cr>
@@ -292,6 +293,6 @@ autocmd BufEnter * lcd %:p:h
 " set Processing Doc path
 let processing_doc_path="/Applications/Processing.app/Contents/Resources/Java/reference/"
 
-if $TERM == 'screen'
+"if $TERM == 'screen'
     set term=xterm-256color
-endif
+"endif

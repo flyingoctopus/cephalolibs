@@ -20,18 +20,18 @@ fetch =
 attic = ~/lib/hg/hgattic/attic.py
 paste = ~/lib/hg/hg-paste/paste.py
 prompt = ~/lib/hg/hg-prompt/prompt.py
-histedit = ~/lib/hg/histedit
+#histedit = ~/lib/hg/histedit
 crecord = ~/lib/hg/crecord/crecord
 hggit = ~/lib/hg/hg-git/hggit
 collapse = ~/lib/hg/hgcollapse/hgext/collapse.py
-review = ~/src/hg-review/review
+#review = ~/src/hg-review/review
 
 [progress]
 delay = 1.0
 
 [schemes]
-webf = ssh://sjl@sjl.webfactional.com/repos/
-bbs = ssh://hg@bitbucket.org/
+#webf = ssh://sjl@sjl.webfactional.com/repos/
+#bbs = ssh://hg@bitbucket.org/
 gh = git://github.com/
 ghs = git+ssh://git@github.com/
 cb = ssh://hg@codebasehq.com/

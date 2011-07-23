@@ -5,8 +5,11 @@ hardstatus on
 hardstatus alwayslastline
 altscreen on # restore window contents after "vim", etc.
 ignorecase on # for searches
-# defwrap off # screen's word wrap is not what you want
+defwrap off # screen's word wrap is not what you want
 defmonitor on
+
+#put buffer contents in os x clipboard
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
 
 
 term xterm-256color
@@ -15,17 +18,17 @@ term xterm-256color
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{y} %l %{c}%m/%d/%y %{W}%c %{g}]'
 #hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
 
-shell /usr/local/bin/bash
+shell /bin/zsh
 
 #screen -t ~ 0 su -
 
-screen -t vimTerm 0 vim
-screen -t bash 1
-screen -t bash 2
-screen -t bash 3
-screen -t bash 7
-screen -t bash 8
-screen -t bash 9
+screen -t zsh 0 vim
+screen -t zsh 1
+screen -t zsh 2
+screen -t zsh 3
+screen -t zsh 7
+screen -t zsh 8
+screen -t zsh 9
 
 #defscrollback 8192
 defscrollback 100000

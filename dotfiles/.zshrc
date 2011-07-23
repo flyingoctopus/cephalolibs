@@ -1,5 +1,12 @@
 export ZSH=$HOME/lib/oh-my-zsh
+plugins=(vi-mode rails3 rvm pow bundler git git-flow github)
+#
+#export ZSH_THEME="dogenpunk"
 export ZSH_THEME="prose"
+#export ZSH_THEME="juanghurtado"
+#export ZSH_THEME="sorin"
+#export ZSH_THEME="dieter"
+#export ZSH_THEME="flazz" #this has got a vi command mode plugin that needs fixing
 export DISABLE_AUTO_UPDATE="true"
 source $ZSH/oh-my-zsh.sh
 
