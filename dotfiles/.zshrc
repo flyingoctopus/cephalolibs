@@ -1,8 +1,9 @@
 export ZSH=$HOME/lib/oh-my-zsh
 plugins=(vi-mode rails3 rvm pow bundler git git-flow github)
 #
-#export ZSH_THEME="dogenpunk"
 export ZSH_THEME="prose"
+#export ZSH_THEME="dogenpunk"
+#export ZSH_THEME="sporty_256"
 #export ZSH_THEME="juanghurtado"
 #export ZSH_THEME="sorin"
 #export ZSH_THEME="dieter"
@@ -36,7 +37,7 @@ export HISTCONTROL=erasedups
 export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export COMMAND_MODE=unix2003
 export R_LIBS="$HOME/lib/r"
-export BAT_CHARGE="$HOME/bin/batcharge.py"
+export BAT_CHARGE="$HOME/lib/bin/batcharge.py"
 export RUBYOPT=rubygems
 export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
 
