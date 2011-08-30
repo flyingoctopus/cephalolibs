@@ -22,6 +22,7 @@ termcapinfo xterm*|rxvt*|kterm*|Eterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 termcapinfo xterm-color "Co#256:AB=E[48;5;%dm:AF=E[38;5;%dm"
 #termcapinfo xterm-256color "Co#256:AB=E[48;5;%dm:AF=E[38;5;%dm"
 term xterm-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
 # erase background with current bg color
 defbce "on"
 
@@ -43,9 +44,9 @@ screen -t zsh 7
 screen -t zsh 8
 screen -t zsh 9
 
-#defscrollback 8192
-defscrollback 9999999
-scrollback 9999999
+defscrollback 8192
+#defscrollback 999999999
+#scrollback 999999999
 utf8 on
 nonblock on
 defnonblock on
