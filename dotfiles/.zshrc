@@ -18,6 +18,7 @@ unsetopt promptcr
 alias j='z'
 alias fab='fab -i ~/.ssh/vincentvanhaaff'
 alias oldgcc='export CC=/usr/bin/gcc-4.0'
+alias wtf='man'
 
 # Environment variables ------------------------------------------------------
 export EDITOR='vim'
