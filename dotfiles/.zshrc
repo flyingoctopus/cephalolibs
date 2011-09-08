@@ -65,10 +65,10 @@ function precmd () {
 }
 
 # BCVI -----------------------------------------------------------------------
-test -n "$(which bcvi)" && eval "$(bcvi --unpack-term)"
-test -n "${BCVI_CONF}"  && alias vi="bcvi"
-test -n "${BCVI_CONF}"  && alias suvi="EDITOR='bcvi -c viwait' sudoedit"
-test -n "${BCVI_CONF}"  && alias bcp="bcvi -c scpd"
+#test -n "$(which bcvi)" && eval "$(bcvi --unpack-term)"
+#test -n "${BCVI_CONF}"  && alias vi="bcvi"
+#test -n "${BCVI_CONF}"  && alias suvi="EDITOR='bcvi -c viwait' sudoedit"
+#test -n "${BCVI_CONF}"  && alias bcp="bcvi -c scpd"
 
 # rvm -----------------------------------------------------------------------
 source ~/.rvm/scripts/rvm
