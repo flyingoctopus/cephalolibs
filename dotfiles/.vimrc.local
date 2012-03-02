@@ -1,3 +1,4 @@
+set t_Co=256 
 filetype off
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
@@ -67,10 +68,12 @@ vmap <tab> %
 "set textwidth=79
 "set formatoptions=qrn1
 
-" Color scheme (terminal)
+" /usr/share/terminfo/xColor scheme (terminal)
 syntax on
-set background=dark
-colorscheme sorcerer
+"set background=dark
+"colorscheme sorcerer
+colorscheme molokai
+"colorscheme mustang
 
 " NERD Tree
 map <F1> :NERDTreeToggle %:p:h<cr>
@@ -155,10 +158,13 @@ map <leader>q gqip
 
 "nmap <leader>m :make<cr>
 
-"nnoremap <F8> :SClangStart
+nnoremap <F8> :SClangStart
 " Google's JSLint
 au BufNewFile,BufRead *.js set makeprg=gjslint\ %
 au BufNewFile,BufRead *.js set errorformat=%-P-----\ FILE\ \ :\ \ %f\ -----,Line\ %l\\,\ E:%n:\ %m,%-Q,%-GFound\ %s,%-GSome\ %s,%-Gfixjsstyle%s,%-Gscript\ can\ %s,%-G
+
+" Use Node.js for JavaScript interpretation
+let $JS_CMD='node'
 
 " TESTING GOAT APPROVES OF THESE LINES
 au BufNewFile,BufRead test_*.py set makeprg=nosetests\ --machine-out\ --nocapture
@@ -292,6 +298,6 @@ autocmd BufEnter * lcd %:p:h
 " set Processing Doc path
 let processing_doc_path="/Applications/Processing.app/Contents/Resources/Java/reference/"
 
-if $TERM == 'screen'
+"if $TERM == 'screen'
     set term=xterm-256color
-endif
+"endif

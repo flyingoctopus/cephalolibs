@@ -24,4 +24,4 @@ dotfiles/vim/backup/tmp/swap/.placeholder
 dotfiles/.vim.old/.netrwhist
 *~
 hg/*
-
+*.un~
