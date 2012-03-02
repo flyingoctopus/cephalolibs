@@ -11,7 +11,8 @@ set guioptions=ns
 set popups=tab
 "set wildoptions=auto
 set complete=slb
-"set suggestengines=google
+set suggestengines=google
+set defsearch=duck
 "set focuscontent
 
 set visualbell
@@ -50,4 +51,6 @@ map Y :twitter<Space>@emilysmith2000<Space>
 map <C-F1> :set guioptions!=m<CR>
 " bookmarks toolbar
 map <C-F2> :set guioptions!=B<CR>
+
+:map s <C-v><F1>
 

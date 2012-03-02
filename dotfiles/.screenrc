@@ -10,28 +10,31 @@ defmonitor on
 
 
 term xterm-256color
+termcapinfo xterm* ti@:te@
 #hardstatus string "%{.bW}%-w%{.rW}%n %t%{-}% w %=%{..G} %H %{..Y} %m/%d %C%a "
 
 hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{y} %l %{c}%m/%d/%y %{W}%c %{g}]'
 #hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?% Lw%?%?%= %{g}]%{=b C}[ %d %M %c ]%{W}'
 
-shell /usr/local/bin/bash
+shell /usr/local/bin/zsh
 
 #screen -t ~ 0 su -
 
 screen -t vimTerm 0 vim
-screen -t bash 1
-screen -t bash 2
-screen -t bash 3
-screen -t bash 7
-screen -t bash 8
-screen -t bash 9
+screen -t zsh 1
+screen -t zsh 2
+screen -t zsh 3
+screen -t zsh 7
+screen -t zsh 8
+screen -t zsh 9
 
 #defscrollback 8192
-defscrollback 100000
+defscrollback 10000
 utf8 on
 nonblock on
 defnonblock on
 
 multiuser on
 acladd pair
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+

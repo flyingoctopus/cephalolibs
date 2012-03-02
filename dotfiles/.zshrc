@@ -12,7 +12,7 @@ alias fab='fab -i ~/.ssh/vincentvanhaaff'
 alias oldgcc='export CC=/usr/bin/gcc-4.0'
 
 # Environment variables ------------------------------------------------------
-export EDITOR='vim'
+export EDITOR='mvim'
 export PATH="$HOME/.gem/ruby/1.8/bin:${PATH}"
 export PATH="/usr/local/bin:/usr/local/sbin:$HOME/lib/fmscripts:$HOME/bin:$PATH"
 export PATH="/opt/subversion/bin:${PATH}"
@@ -80,4 +80,5 @@ cat /etc/motd
 
 alias hibernateon="sudo pmset -a hibernatemode 5"
 alias hibernateoff="sudo pmset -a hibernatemode 0"
-# 
+ 
+source $HOME/.zshrc.local

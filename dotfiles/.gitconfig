@@ -1,37 +1,46 @@
 [user]
-name = Vincent van Haaff
-email = vincent@vanhaaff.com
+	name = Vincent van Haaff
+  email = vincent@vanhaaff.com
 
 [core]
-pager = cat
-editor = mvim -f
+  pager = cat
+  editor = mvim -f
+	excludesfile = /Users/vincent/.gitignore_global
 
 [alias]
-gl  = log -10 --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
-gll = log     --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+  gl  = log -10 --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
+  gll = log     --color=always --all --graph --topo-order --pretty='format: %Cgreen%h%Creset %s%Cred%d%Creset%n'
 
-com = commit
-cm = commit -m
+  com = commit
+  cm = commit -m
 
-co = checkout
+  co = checkout
 
-stat = status
-st = status
+  stat = status
+  st = status
 
-unstage = reset HEAD
-uns = reset HEAD
+  unstage = reset HEAD
+  uns = reset HEAD
+
+  pu = pull upstream master
 
 [color]
-branch = auto
-diff = auto
-interactive = auto
-status = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
 
-[difftool "Changes"]
-cmd = chdiff git \"$LOCAL\" \"$REMOTE\"
 
 [difftool]
-prompt = false
+
+[difftool "Kaleidoscope"]
 
 [diff]
-tool = Changes
+[basecamp]
+	api-endpoint = https://coverallcrew.basecamphq.com/
+	api-token = 6deb8b510e5dbbc0916e23056d428992488a83d4
+	person-id = 8284944
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = vimdiff

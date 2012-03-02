@@ -6,11 +6,11 @@
 # Don't forget the SSH keys.
 # Setuptools needs to be installed.
 
-mkdir -p lib/hg
-mkdir -p lib/python
-mkdir -p lib/virtualenvs
-mkdir bin
-mkdir src
+mkdir -p $HOME/lib/hg
+mkdir -p $HOME/lib/python
+mkdir -p $HOME/lib/virtualenvs
+mkdir $HOME/lib/bin
+mkdir $HOME/lib/src
 
 echo '#!/usr/bin/env python' > bin/batcharge.py
 echo 'pass' >> bin/batcharge.py
@@ -22,7 +22,7 @@ make local
 cd
 export PATH="$HOME/lib/hg/hg-stable:$PATH"
 
-hg clone http://bitbucket.org/sjl/dotfiles ~/lib/dotfiles
+# hg clone http://bitbucket.org/sjl/dotfiles ~/lib/dotfiles
 git clone git://github.com/sjl/oh-my-zsh ~/lib/oh-my-zsh
 git clone git://github.com/sjl/z-zsh ~/lib/z
 
@@ -50,6 +50,7 @@ ln -s "$home/lib/dotfiles/.vimrc.local" "$home/.vimrc.local"
 ln -s "$HOME/lib/dotfiles/.screenrc" "$HOME/.screenrc"
 ln -s "$HOME/lib/dotfiles/.inputrc" "$HOME/.inputrc"
 ln -s "$HOME/lib/dotfiles/.editrc" "$HOME/.editrc"
+ln -s "$HOME/lib/dotfiles/.screenrc $HOME/.screenrc"
 
 rm ~/.zshrc
 rm ~/.bashrc
