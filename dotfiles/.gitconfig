@@ -36,11 +36,24 @@
 [difftool "Kaleidoscope"]
 
 [diff]
-[basecamp]
-	api-endpoint = https://coverallcrew.basecamphq.com/
-	api-token = 6deb8b510e5dbbc0916e23056d428992488a83d4
-	person-id = 8284944
+
 [difftool "Kaleidoscope"]
-	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+
 [merge]
 	tool = vimdiff
+
+[github]
+  user = flyingoctopus
+  password = einstein
+	token = e5c32d3086f9ea720b2c595a65bdc92a
+
+[hub]
+	protocol = https
+[difftool]
+[diff]
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
