@@ -38,7 +38,8 @@ cd ~/lib/python/virtualenvwrapper
 sudo python setup.py install
 cd
 
-ln -s "$HOME/lib/dotfiles/zsh" "$HOME/lib/oh-my-zsh/custom"
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+#ln -s "$HOME/lib/dotfiles/zsh" "$HOME/lib/oh-my-zsh/custom"
 
 ln -s "$HOME/lib/dotfiles/.ackrc" "$HOME/.ackrc"
 ln -s "$HOME/lib/dotfiles/.gitconfig" "$HOME/.gitconfig"
@@ -47,6 +48,8 @@ ln -s "$HOME/lib/dotfiles/.vim" "$HOME/.vim"
 ln -s "$HOME/lib/dotfiles/.vimrc" "$HOME/.vimrc"
 ln -s "$HOME/lib/dotfiles/.gvimrc" "$HOME/.gvimrc"
 ln -s "$home/lib/dotfiles/.vimrc.local" "$home/.vimrc.local"
+ln -s "$home/lib/dotfiles/.vimrc.before" "$home/.vimrc.local"
+ln -s "$home/lib/dotfiles/.vimrc.after" "$home/.vimrc.local"
 ln -s "$HOME/lib/dotfiles/.screenrc" "$HOME/.screenrc"
 ln -s "$HOME/lib/dotfiles/.inputrc" "$HOME/.inputrc"
 ln -s "$HOME/lib/dotfiles/.editrc" "$HOME/.editrc"
@@ -56,6 +59,7 @@ rm ~/.zshrc
 rm ~/.bashrc
 rm ~/.bash_profile
 ln -s "$HOME/lib/dotfiles/.zshrc" "$HOME/.zshrc"
+ln -s "$HOME/lib/dotfiles/.zshrc.local" "$HOME/.zshrc.local"
 
 hg clone bb://sjl/hg-prompt/ "$HOME/lib/hg/hg-prompt"
 hg clone bb://sjl/hg-paste/ "$HOME/lib/hg/hg-paste"
