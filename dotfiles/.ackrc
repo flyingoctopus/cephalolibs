@@ -6,9 +6,11 @@ django=.py,.html
 --type-set
 less=.less
 --type-set
-front=.html,.haml,.js,.less,.css
+front=.html,.haml,.js,.coffee,.css,.less,.sass,.scss
+--type-add
+processing=.pde,.java,.properties
 
---type-add=ruby=.haml,.rake,.rsel,.feature,.php,.sass,.coffee
+--type-add=ruby=.haml,.rake,.rsel,.feature,.php,.sass,.coffee,.eco
 --ignore-dir=db
 --ignore-dir=tmp
 --ignore-dir=log
